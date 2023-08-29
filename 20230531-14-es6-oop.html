@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        gender = "male";
+
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        getInfo() {
+          return `${this.name} : ${this.gender} : ${this.age}`;
+        }
+
+        // override 覆寫原有的功能
+        toString() {
+          return JSON.stringify(this);
+        }
+      }
+
+      var p1 = new Person("Peter", 25);
+
+      console.log(p1.getInfo());
+      console.log(p1.toString());
+      console.log(p1 + "");
+      console.log(p1.name);
+    </script>
+  </body>
+</html>

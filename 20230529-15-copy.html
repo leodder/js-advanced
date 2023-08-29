@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="ccc">123</div>
+    <div class="ccc">456</div>
+    <div class="ccc">789</div>
+
+    <script>
+      const p1 = {
+        name: {
+          first: "john",
+          last: "wick",
+        },
+        age: 25,
+        gender: "male",
+      };
+
+      // 淺層拷貝
+      const p2 = { ...p1 };
+      // 傳統的深層複製
+      const p3 = JSON.parse(JSON.stringify(p1));
+
+      p2.name.last = "doe";
+
+      console.log(p1);
+      console.log(p2);
+      console.log(p3);
+    </script>
+  </body>
+</html>

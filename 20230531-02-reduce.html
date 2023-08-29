@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ar = [2, 7, 34, 17, 19, 23, 6];
+
+      ar.reduce((a, v, i, arr) => {
+        console.log({ a, v, i });
+      });
+      console.log("---------------------");
+
+      let sum = ar.reduce((a, val, i) => {
+        console.log({ a, val, i });
+        return a + val;
+      });
+      console.log({ sum });
+      console.log("====================");
+
+      sum = ar.reduce((a, val, i) => {
+        console.log({ a, val, i });
+        return a + val;
+      }, 0);
+      console.log({ sum });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rect {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        background-color: #f9e6e6;
+        border: 1px solid black;
+      }
+      .ball {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #4f8bec;
+        border: 1px solid black;
+        left: 100px;
+        top: 50px;
+      }
+      .rect2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+
+        background-color: #d6bc6f;
+        border: 1px solid black;
+        left: 50px;
+        top: 50px;
+      }
+      #info {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect">
+      <div class="ball">
+        <div class="rect2"></div>
+      </div>
+    </div>
+    <div id="info"></div>
+
+    <script>
+      const rect = document.querySelector(".rect");
+      const info = document.querySelector("#info");
+
+      //一般函式中的 this：函式作為事件處理函式被呼叫時，this 通常會指向觸發事件的 DOM 元素。
+      //頭函式中的 this： 在箭頭函式中，this 的值是根據函式被定義的上下文靜態決定的，而不是被呼叫的方式。箭頭函式捕獲了它周圍最近的非箭頭函式的 this 值。換句話說，箭頭函式的 this 始終指向定義該函式的上下文。
+      rect.addEventListener("mousemove", (e) => {
+        info.innerHTML = `
+          page: ${e.pageX}, ${e.pageY}<br>
+          client: ${e.clientX}, ${e.clientY}<br>
+          offset: ${e.offsetX}, ${e.offsetY}<br>
+        `;
+      });
+    </script>
+  </body>
+</html>

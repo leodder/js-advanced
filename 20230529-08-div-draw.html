@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rect {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        background-color: #f9e6e6;
+        border: 1px solid black;
+      }
+      .ball {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+        border: 1px solid black;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+
+    <script>
+      const rect = document.querySelector(".rect");
+
+      rect.addEventListener("mousemove", (e) => {
+        const b = document.createElement("div");
+        b.className = "ball";
+        b.style.left = e.offsetX - 10 + "px";
+        b.style.top = e.offsetY - 10 + "px";
+
+        rect.append(b);
+      });
+    </script>
+  </body>
+</html>
